@@ -16,8 +16,8 @@ export default function PageFade() {
     }
     setRun((r) => r + 1);
     setVisible(true);
-    window.scrollTo({ top: 0, behavior: "instant" as ScrollBehavior });
-    const t = setTimeout(() => setVisible(false), 1450);
+    window.dispatchEvent(new CustomEvent("lenis-reset"));
+    const t = setTimeout(() => setVisible(false), 1500);
     return () => clearTimeout(t);
   }, [pathname]);
 
@@ -27,8 +27,21 @@ export default function PageFade() {
       className={`${styles.overlay} ${visible ? styles.show : styles.hide}`}
       aria-hidden
     >
+      <svg className={styles.spinner} viewBox="0 0 48 48" aria-hidden>
+        <circle cx="24" cy="24" r="20" stroke="rgba(110,168,255,0.16)" strokeWidth="3" fill="none" />
+        <circle
+          cx="24"
+          cy="24"
+          r="20"
+          stroke="var(--glow-b)"
+          strokeWidth="3"
+          fill="none"
+          strokeLinecap="round"
+          strokeDasharray="88 38"
+          strokeDashoffset="10"
+        />
+      </svg>
       <span className={styles.word}>Улучшатор</span>
-      <span className="cursor" />
       <span className={styles.note}>~ загружаю</span>
     </div>
   );

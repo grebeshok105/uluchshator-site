@@ -3,9 +3,11 @@ import styles from "./Stats.module.css";
 
 const ITEMS = [
   { value: String(SITE.skillCount), label: "скиллов" },
-  { value: String(SITE.baseCount), label: "базы знаний" },
-  { value: `${SITE.metricCount}+`, label: "замеров было / стало" },
-  { value: "1", label: "агент доволен" },
+  { value: String(SITE.docCount), label: "канон-доков" },
+  { value: String(SITE.searchDomains), label: "доменов поиска" },
+  { value: String(SITE.gates), label: "гейта на сдаче" },
+  { value: String(SITE.providers), label: "провайдера моделей" },
+  { value: String(SITE.models), label: "моделей в роутинге" },
 ];
 
 export default function Stats() {

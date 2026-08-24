@@ -1,7 +1,10 @@
 export const SITE = {
-  version: "v0.3",
-  skillCount: 56,
-  baseCount: 4,
-  metricCount: 180,
-  statuses: ["линт-гейт активен", "скиллы валидируются", "базы свежие"],
+  version: "v1.0",
+  skillCount: 100,
+  docCount: 28,
+  searchDomains: 6,
+  gates: 3,
+  providers: 4,
+  models: 38,
+  statuses: ["100/100 скиллов валидны", "28 канон-доков на месте", "3 гейта на сдаче"],
 } as const;

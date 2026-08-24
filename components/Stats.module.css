@@ -7,7 +7,7 @@
 }
 
 .inner {
-  max-width: 960px;
+  max-width: 1040px;
   margin: 0 auto;
 }
 
@@ -30,15 +30,15 @@
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 14px;
 }
 
 .cell {
   border: 1px solid rgba(110, 168, 255, 0.12);
   border-radius: 14px;
-  padding: 28px 16px;
-  background: rgba(13, 20, 32, 0.4);
+  padding: 26px 16px;
+  background: rgba(13, 22, 38, 0.4);
   transition: border-color 0.35s var(--ease);
 }
 
@@ -64,7 +64,7 @@
 .statuses {
   list-style: none;
   display: flex;
-  gap: 20px;
+  gap: 16px;
   flex-wrap: wrap;
   justify-content: center;
   font-family: var(--font-mono);

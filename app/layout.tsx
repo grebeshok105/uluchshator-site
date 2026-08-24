@@ -3,6 +3,7 @@ import { Onest, JetBrains_Mono } from "next/font/google";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import PageFade from "@/components/PageFade";
+import SmoothScroll from "@/components/SmoothScroll";
 import "./globals.css";
 import "highlight.js/styles/github-dark.css";
 
@@ -27,6 +28,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="ru" className={`${onest.variable} ${mono.variable}`}>
       <body>
+        <SmoothScroll />
         <PageFade />
         <Nav />
         {children}
