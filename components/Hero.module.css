@@ -1,12 +1,11 @@
 .hero {
-  min-height: 100svh;
   display: grid;
   grid-template-columns: 1fr 1.1fr;
   align-items: start;
   gap: 48px;
   max-width: 1280px;
   margin: 0 auto;
-  padding: 16vh 48px 0;
+  padding: 11vh 48px 9vh;
 }
 
 .text {
@@ -140,7 +139,7 @@
   display: block;
   width: 100%;
   height: auto;
-  max-height: 52vh;
+  max-height: 56vh;
   object-fit: cover;
   object-position: top;
 }

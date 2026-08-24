@@ -44,11 +44,13 @@ function MiniViz({ kind }: { kind: Viz }) {
     case "gatebar":
       return (
         <svg viewBox="0 0 48 32" className={styles.viz} aria-hidden>
-          <path d="M6 8.2l9-3.5 9 3.5v6.4c0 4.6-3.4 8.3-9 9.6-5.6-1.3-9-5-9-9.6z" {...G} fill="rgba(110,168,255,0.1)" strokeOpacity="0.7" strokeWidth="1.2" strokeLinejoin="round" />
-          <path d="M10.5 15.4l2 2 3.4-3.6" {...OK} strokeWidth="1.4" fill="none" strokeLinecap="round" strokeLinejoin="round" />
-          <path d="M33 12.5v3.5h3.5" {...G} strokeWidth="1.3" fill="none" strokeLinecap="round" strokeLinejoin="round" />
-          <path d="M32.8 13.6a7 7 0 1 1-1.8-5.6" {...G} strokeOpacity="0.5" strokeWidth="1.2" fill="none" strokeLinecap="round" />
-          <circle cx="36.5" cy="13" r="2.4" fill="#4ade80" fillOpacity="0.85" />
+          <path d="M6 16h10M22 16h10M38 16v-8" {...DIM} strokeWidth="1.2" fill="none" strokeLinecap="round" />
+          <rect x="6" y="11" width="10" height="10" rx="2.5" {...G} fill="rgba(110,168,255,0.08)" strokeWidth="1.2" />
+          <rect x="22" y="11" width="10" height="10" rx="2.5" {...G} fill="rgba(110,168,255,0.08)" strokeWidth="1.2" />
+          <rect x="38" y="8" width="10" height="13" rx="2.5" fill="rgba(74,222,128,0.22)" {...OK} strokeWidth="1.3" />
+          <path d="M8.5 15.6l2.4 2.4 2.6-3" {...OK} strokeWidth="1.4" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+          <path d="M24.5 15.6l2.4 2.4 2.6-3" {...OK} strokeWidth="1.4" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+          <path d="M42.5 12.5l2 2-2 2" {...OK} strokeWidth="1.3" fill="none" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
       );
     case "loopring":

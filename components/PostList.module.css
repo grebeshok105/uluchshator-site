@@ -34,10 +34,10 @@
 }
 
 .active {
-  border-color: var(--glow-b);
-  color: var(--glow-b);
-  background: rgba(110, 168, 255, 0.1);
-  box-shadow: 0 0 12px rgba(110, 168, 255, 0.18);
+  border-color: rgba(110, 168, 255, 0.55);
+  color: var(--text);
+  background: rgba(110, 168, 255, 0.09);
+  box-shadow: 0 0 10px rgba(110, 168, 255, 0.12);
 }
 
 .list {
@@ -96,15 +96,17 @@
 .title {
   font-family: var(--font-display);
   font-size: 17px;
-  margin: 8px 0 6px;
-  display: inline;
+  line-height: 1.35;
+  margin: 10px 0 6px;
+  display: block;
 }
 
 .metric {
   color: var(--glow-a);
   font-family: var(--font-mono);
   font-size: 12px;
-  margin-left: 10px;
+  display: block;
+  margin: 4px 0 6px;
 }
 
 .excerpt {
