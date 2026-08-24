@@ -6,6 +6,7 @@ import Manifest from "@/components/Manifest";
 import Features from "@/components/Features";
 import HowItWorks from "@/components/HowItWorks";
 import Stats from "@/components/Stats";
+import SkillsSection from "@/components/SkillsSection";
 import ChangeLog from "@/components/ChangeLog";
 import FinalCTA from "@/components/FinalCTA";
 
@@ -35,6 +36,9 @@ export default async function Home() {
       <div className="divider" aria-hidden />
       <Reveal delay={50}>
         <Stats />
+      </Reveal>
+      <Reveal delay={60}>
+        <SkillsSection />
       </Reveal>
       <Reveal delay={60}>
         <ChangeLog entries={logEntries} />
