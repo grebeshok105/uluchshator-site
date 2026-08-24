@@ -51,11 +51,15 @@
   box-shadow: 0 0 24px rgba(110, 168, 255, 0.1);
 }
 
-.viz {
-  width: 100%;
-  height: 44px;
-  margin-bottom: 18px;
-  opacity: 0.9;
+.card:active {
+  transform: translateY(-1px) scale(0.985);
+  box-shadow: 0 0 14px rgba(110, 168, 255, 0.06);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card {
+    transition: none;
+  }
 }
 
 .title {
