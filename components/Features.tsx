@@ -1,4 +1,5 @@
-import FeatureCard, { type Viz } from "@/components/FeatureCard";
+import FeatureCard from "@/components/FeatureCard";
+import { type Viz } from "@/components/MiniViz";
 import { asset } from "@/lib/asset";
 import styles from "./Features.module.css";
 
