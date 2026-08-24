@@ -5,11 +5,22 @@
 
 Тёмный дизайн с голубым свечением, контент в MDX, чистый статик.
 
+## Скриншоты
+
+### Главная — hero
+
+![Главная — hero](screenshots/hero.webp)
+
+### Главная — полностью
+
+![Главная — полностью](screenshots/full.webp)
+
 ## Стек
 
 - Next.js (App Router), статический экспорт (`output: "export"`)
 - Контент: MDX в `content/changelog/` и `content/blog/`
-- Шрифты: Unbounded / Manrope / JetBrains Mono (next/font)
+- Шрифты: Onest / JetBrains Mono (next/font)
+- Иконки и медиа: `public/icons/` (SVG), `public/shots/` (скриншоты omp)
 - Тесты: vitest (`test/lib/content.test.ts`)
 - Деплой: GitHub Actions → Pages (`deploy.yml`)
 
@@ -27,9 +38,8 @@ npm test         # vitest
 Записи — коммиты: `content/changelog/2026-08-24-<slug>.mdx`, пуш в main,
 деплой сам. Правило для агента — в `AGENTS.md`.
 
-При подключении собственного домена (CNAME): убрать
-`NEXT_PUBLIC_BASE_PATH` из workflow и указать Custom domain в настройках
-Pages репозитория.
+При подключении собственного домена: указать Custom domain в настройках
+Pages репозитория и убрать `NEXT_PUBLIC_BASE_PATH` из `deploy.yml`.
 
 Дизайн-спек: `D:/WorkFlow/docs/superpowers/specs/2026-08-24-uluchshator-site-design.md`
 План: `D:/WorkFlow/docs/superpowers/plans/2026-08-24-uluchshator-site.md`
