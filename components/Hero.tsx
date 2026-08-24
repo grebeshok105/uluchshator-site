@@ -1,4 +1,5 @@
 import { SITE } from "@/data/site";
+import { asset } from "@/lib/asset";
 import styles from "./Hero.module.css";
 
 export default function Hero() {
@@ -27,7 +28,11 @@ export default function Hero() {
             <span className={styles.windowTitle}>omp — live session</span>
           </div>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/shots/python.webp" alt="omp выполняет Python-код и рисует график в живом терминале" className={styles.shot} />
+          <img
+            src={asset("/shots/python.webp")}
+            alt="omp выполняет Python-код и рисует график в живом терминале"
+            className={styles.shot}
+          />
         </div>
       </div>
     </section>

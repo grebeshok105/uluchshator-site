@@ -1,3 +1,4 @@
+import { asset } from "@/lib/asset";
 import styles from "./Features.module.css";
 
 const FEATURES = [
@@ -65,7 +66,7 @@ export default function Features() {
         {FEATURES.map((f) => (
           <div key={f.title} className={styles.card}>
             <svg className={styles.icon} aria-hidden>
-              <use href={`/icons/${f.icon}.svg#icon`} />
+              <use href={asset(`/icons/${f.icon}.svg#icon`)} />
             </svg>
             <h3 className={styles.cardTitle}>{f.title}</h3>
             <p className={styles.cardText}>{f.text}</p>
@@ -80,7 +81,7 @@ export default function Features() {
                 <span className={styles.windowTitle}>{s.title}</span>
               </div>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={s.src} alt="" className={styles.shot} loading="lazy" />
+              <img src={asset(s.src)} alt="" className={styles.shot} loading="lazy" />
             </div>
             <figcaption className={styles.caption}>{s.caption}</figcaption>
           </figure>
