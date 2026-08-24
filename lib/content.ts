@@ -24,6 +24,7 @@ function normalizeDate(value: unknown): string {
 
 export async function getAllEntries(dir: string = DEFAULT_DIR): Promise<Entry[]> {
   const entries: Entry[] = [];
+  const usedSlugs = new Set<string>();
   for (const type of ["changelog", "blog"] as const) {
     const full = path.join(dir, type);
     const files = await fs.readdir(full).catch(() => [] as string[]);
@@ -32,8 +33,12 @@ export async function getAllEntries(dir: string = DEFAULT_DIR): Promise<Entry[]>
       const raw = await fs.readFile(path.join(full, file), "utf8");
       const { data, content } = matter(raw);
       const excerpt = typeof data.excerpt === "string" ? data.excerpt : content.slice(0, 140);
+      const baseName = file.replace(/\.mdx$/, "");
+      const stripped = baseName.replace(/^\d{4}-\d{2}-\d{2}-/, "");
+      const slug = usedSlugs.has(stripped) ? baseName : stripped;
+      usedSlugs.add(slug);
       entries.push({
-        slug: file.replace(/\.mdx$/, "").replace(/^\d{4}-\d{2}-\d{2}-/, ""),
+        slug,
         type: type === "blog" ? "post" : "changelog",
         title: String(data.title ?? file),
         date: normalizeDate(data.date),
@@ -44,7 +49,11 @@ export async function getAllEntries(dir: string = DEFAULT_DIR): Promise<Entry[]>
       });
     }
   }
-  return entries.sort((a, b) => (a.date < b.date ? 1 : -1));
+  return entries.sort((a, b) => {
+    if (a.date < b.date) return 1;
+    if (a.date > b.date) return -1;
+    return 0;
+  });
 }
 
 export async function getEntryBySlug(slug: string, dir: string = DEFAULT_DIR): Promise<Entry | undefined> {

@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import styles from "./Nav.module.css";
 
@@ -12,13 +12,31 @@ const LINKS = [
 export default function Nav() {
   const [open, setOpen] = useState(false);
 
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setOpen(false);
+    };
+    document.addEventListener("keydown", onKey);
+    const prevOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      document.body.style.overflow = prevOverflow;
+    };
+  }, [open]);
+
   return (
     <header className={styles.header}>
       <Link href="/" className={styles.logo} onClick={() => setOpen(false)}>
         <span className={styles.dot} aria-hidden />
         Улучшатор
       </Link>
-      <nav className={`${styles.nav} ${open ? styles.navOpen : ""}`} aria-label="Основная навигация">
+      <nav
+        id="site-nav"
+        className={`${styles.nav} ${open ? styles.navOpen : ""}`}
+        aria-label="Основная навигация"
+      >
         {LINKS.map((l, i) => (
           <Link
             key={l.href}
@@ -38,6 +56,7 @@ export default function Nav() {
         type="button"
         className={styles.burger}
         aria-expanded={open}
+        aria-controls="site-nav"
         aria-label={open ? "Закрыть меню" : "Открыть меню"}
         onClick={() => setOpen((v) => !v)}
       >

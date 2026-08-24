@@ -4,11 +4,13 @@ import styles from "./Reveal.module.css";
 
 export default function Reveal({ children, delay = 0 }: { children: ReactNode; delay?: number }) {
   const ref = useRef<HTMLDivElement>(null);
-  const [shown, setShown] = useState(false);
+  const [shown, setShown] = useState(true);
 
   useEffect(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const el = ref.current;
     if (!el) return;
+    setShown(false); // прячем только после гидрации и только при явном разрешении анимации
     const io = new IntersectionObserver(
       ([e]) => {
         if (e.isIntersecting) {

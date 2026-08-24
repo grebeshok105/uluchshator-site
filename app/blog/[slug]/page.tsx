@@ -5,6 +5,12 @@ import { notFound } from "next/navigation";
 import { getAllEntries, getEntryBySlug } from "@/lib/content";
 import styles from "./page.module.css";
 
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const entry = await getEntryBySlug(slug);
+  return { title: entry?.title ?? "Запись" };
+}
+
 export async function generateStaticParams() {
   const entries = await getAllEntries();
   return entries.map((e) => ({ slug: e.slug }));

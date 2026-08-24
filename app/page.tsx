@@ -12,9 +12,11 @@ export default async function Home() {
       <Reveal>
         <Hero />
       </Reveal>
+      <div className="divider" aria-hidden />
       <Reveal delay={100}>
         <Stats />
       </Reveal>
+      <div className="divider" aria-hidden />
       <Reveal delay={150}>
         <ChangeLog entries={logEntries} />
       </Reveal>

@@ -1,6 +1,8 @@
 import { getAllEntries } from "@/lib/content";
 import styles from "./page.module.css";
 
+export const metadata = { title: "История" };
+
 export default async function ChangelogPage() {
   const entries = (await getAllEntries()).filter((e) => e.type === "changelog");
   return (

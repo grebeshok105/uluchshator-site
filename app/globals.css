@@ -58,3 +58,31 @@ button {
   background: var(--glow-a);
   animation: blink 1s step-end infinite;
 }
+
+.divider {
+  height: 1px;
+  margin: 0 auto;
+  width: min(960px, 88vw);
+  background: linear-gradient(90deg, transparent, var(--glow-a) 25%, var(--glow-b) 50%, var(--glow-a) 75%, transparent);
+  mask-image: repeating-linear-gradient(
+    90deg,
+    #000 0 6px,
+    transparent 6px 11px,
+    #000 11px 22px,
+    transparent 22px 26px
+  );
+  -webkit-mask-image: repeating-linear-gradient(
+    90deg,
+    #000 0 6px,
+    transparent 6px 11px,
+    #000 11px 22px,
+    transparent 22px 26px
+  );
+  opacity: 0.7;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cursor {
+    animation: none;
+  }
+}

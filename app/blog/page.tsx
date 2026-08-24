@@ -2,6 +2,8 @@ import { getAllEntries } from "@/lib/content";
 import PostList from "@/components/PostList";
 import styles from "./page.module.css";
 
+export const metadata = { title: "Блог" };
+
 export default async function BlogPage() {
   const entries = await getAllEntries();
   return (

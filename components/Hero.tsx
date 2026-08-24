@@ -1,15 +1,15 @@
 import { SITE } from "@/data/site";
 import styles from "./Hero.module.css";
 
-const TERM_LINES = [
-  "$ omp up",
-  "✓ скиллы: 56 валидны",
-  "✓ базы: 4 свежие",
-  "✓ линт-гейт: пройден",
-  "~ агент продолжает работу",
-];
-
 export default function Hero() {
+  const termLines = [
+    "$ omp up",
+    `✓ скиллы: ${SITE.skillCount} валидны`,
+    `✓ базы: ${SITE.baseCount} свежие`,
+    "✓ линт-гейт: пройден",
+    "~ агент продолжает работу",
+  ];
+
   return (
     <section className={styles.hero}>
       <div className={styles.text}>
@@ -29,7 +29,7 @@ export default function Hero() {
         </div>
       </div>
       <div className={styles.term} aria-hidden>
-        {TERM_LINES.map((line, i) => (
+        {termLines.map((line, i) => (
           <p key={i} className={styles.termLine} style={{ animationDelay: `${i * 0.35}s` }}>
             {line}
           </p>
