@@ -40,16 +40,6 @@ button {
   font-family: inherit;
 }
 
-@keyframes breathe {
-  0%,
-  100% {
-    text-shadow: 0 0 18px rgba(110, 168, 255, 0.35), 0 0 40px rgba(110, 168, 255, 0.12);
-  }
-  50% {
-    text-shadow: 0 0 30px rgba(155, 220, 255, 0.6), 0 0 70px rgba(110, 168, 255, 0.25);
-  }
-}
-
 @keyframes blink {
   0%,
   49% {

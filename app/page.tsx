@@ -1,7 +1,23 @@
-export default function Home() {
+import { getAllEntries } from "@/lib/content";
+import Reveal from "@/components/Reveal";
+import Hero from "@/components/Hero";
+import Stats from "@/components/Stats";
+import ChangeLog from "@/components/ChangeLog";
+
+export default async function Home() {
+  const entries = await getAllEntries();
+  const logEntries = entries.filter((e) => e.type === "changelog").slice(0, 7);
   return (
-    <main style={{ minHeight: "100vh", display: "grid", placeItems: "center" }}>
-      <h1 style={{ fontFamily: "var(--font-unbounded)" }}>Улучшатор</h1>
+    <main>
+      <Reveal>
+        <Hero />
+      </Reveal>
+      <Reveal delay={100}>
+        <Stats />
+      </Reveal>
+      <Reveal delay={150}>
+        <ChangeLog entries={logEntries} />
+      </Reveal>
     </main>
   );
 }
