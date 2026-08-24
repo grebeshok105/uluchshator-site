@@ -29,10 +29,11 @@ html {
 body {
   min-height: 100vh;
   background:
-    radial-gradient(900px 600px at 88% 8%, rgba(110, 168, 255, 0.09), transparent 62%),
-    radial-gradient(700px 500px at 6% 30%, rgba(110, 168, 255, 0.06), transparent 60%),
-    radial-gradient(800px 700px at 92% 68%, rgba(155, 220, 255, 0.05), transparent 55%),
-    radial-gradient(650px 550px at 4% 82%, rgba(110, 168, 255, 0.05), transparent 58%),
+    radial-gradient(1000px 650px at 90% 6%, rgba(110, 168, 255, 0.13), transparent 62%),
+    radial-gradient(800px 560px at 5% 28%, rgba(110, 168, 255, 0.1), transparent 60%),
+    radial-gradient(900px 760px at 94% 66%, rgba(155, 220, 255, 0.08), transparent 55%),
+    radial-gradient(700px 600px at 3% 80%, rgba(110, 168, 255, 0.08), transparent 58%),
+    radial-gradient(1100px 500px at 50% 0%, rgba(110, 168, 255, 0.05), transparent 60%),
     radial-gradient(circle at 30% 10%, rgba(110, 168, 255, 0.05) 1px, transparent 1px) 0 0 / 44px 44px,
     var(--bg);
 }
@@ -105,6 +106,42 @@ p {
 }
 
 /* ряд маленьких квадратов-пикселей (декор секций) */
+/* HUD-линии по краям страницы */
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.5;
+  background: linear-gradient(
+    180deg,
+    transparent,
+    rgba(110, 168, 255, 0.4) 18%,
+    rgba(155, 220, 255, 0.25) 50%,
+    rgba(110, 168, 255, 0.4) 82%,
+    transparent
+  );
+}
+
+body::before {
+  left: 28px;
+}
+
+body::after {
+  right: 28px;
+}
+
+@media (max-width: 900px) {
+  body::before,
+  body::after {
+    display: none;
+  }
+}
+
 .pix {
   display: flex;
   gap: 5px;
