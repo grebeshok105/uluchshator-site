@@ -1,9 +1,9 @@
-import MiniViz, { type Viz } from "@/components/MiniViz";
+import { asset } from "@/lib/asset";
 import styles from "./SkillsSection.module.css";
 
-const SKILLS: { viz: Viz; title: string; lead: string; points: string[] }[] = [
+const SKILLS: { icon: string; title: string; lead: string; points: string[] }[] = [
   {
-    viz: "term",
+    icon: "r4",
     title: "Правило четырёх",
     lead: "Пайплайн для задач, которые тянут на план из пяти блоков.",
     points: [
@@ -13,7 +13,7 @@ const SKILLS: { viz: Viz; title: string; lead: string; points: string[] }[] = [
     ],
   },
   {
-    viz: "chips",
+    icon: "fmethod",
     title: "Fable-метод",
     lead: "Основной цикл любой нетривиальной работы.",
     points: [
@@ -23,7 +23,7 @@ const SKILLS: { viz: Viz; title: string; lead: string; points: string[] }[] = [
     ],
   },
   {
-    viz: "stack",
+    icon: "fjudge",
     title: "Fable-судья",
     lead: "Адверсариальная проверка любого «готово».",
     points: [
@@ -33,7 +33,7 @@ const SKILLS: { viz: Viz; title: string; lead: string; points: string[] }[] = [
     ],
   },
   {
-    viz: "gatebar",
+    icon: "fdomain",
     title: "Fable-домен",
     lead: "Генератор скиллов под конкретный сектор.",
     points: [
@@ -43,7 +43,7 @@ const SKILLS: { viz: Viz; title: string; lead: string; points: string[] }[] = [
     ],
   },
   {
-    viz: "loopring",
+    icon: "floop",
     title: "Fable-цикл",
     lead: "Автономная работа витками без постоянного надзора.",
     points: [
@@ -53,7 +53,7 @@ const SKILLS: { viz: Viz; title: string; lead: string; points: string[] }[] = [
     ],
   },
   {
-    viz: "rows",
+    icon: "upgrade",
     title: "Улучшатор",
     lead: "Инспектор проекта перед агентной работой.",
     points: [
@@ -63,7 +63,7 @@ const SKILLS: { viz: Viz; title: string; lead: string; points: string[] }[] = [
     ],
   },
   {
-    viz: "conveyor",
+    icon: "nodumb",
     title: "Nodumb",
     lead: "Стоп перед первой пришедшей в голову идеей.",
     points: [
@@ -73,7 +73,7 @@ const SKILLS: { viz: Viz; title: string; lead: string; points: string[] }[] = [
     ],
   },
   {
-    viz: "bars",
+    icon: "frontend",
     title: "Frontend-диспетчер",
     lead: "Маршрутизация фронт-задач по профильным скиллам.",
     points: [
@@ -93,7 +93,11 @@ export default function SkillsSection() {
         <div className={styles.grid}>
           {SKILLS.map((s) => (
             <div key={s.title} className={styles.card}>
-              <MiniViz kind={s.viz} />
+              <span className={styles.iconBox}>
+                <svg className={styles.icon} aria-hidden>
+                  <use href={asset(`/icons/${s.icon}.svg#icon`)} />
+                </svg>
+              </span>
               <h3 className={styles.title}>{s.title}</h3>
               <p className={styles.lead}>{s.lead}</p>
               <ul className={styles.points}>

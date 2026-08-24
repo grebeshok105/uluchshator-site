@@ -51,11 +51,22 @@
   box-shadow: 0 0 24px rgba(110, 168, 255, 0.1);
 }
 
-.viz {
-  width: 100%;
-  height: 44px;
-  margin-bottom: 18px;
-  opacity: 0.9;
+.iconBox {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  margin-bottom: 16px;
+  border: 1px solid rgba(110, 168, 255, 0.28);
+  border-radius: 10px;
+  background: rgba(110, 168, 255, 0.06);
+}
+
+.icon {
+  width: 18px;
+  height: 18px;
+  color: var(--glow-a);
 }
 
 .title {
