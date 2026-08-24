@@ -1,36 +1,35 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Улучшатор — сайт
 
-## Getting Started
+Витрина + личный блог улучшатора: обвязки вокруг Oh My Pi, которая
+усиливает агента (скиллы, базы знаний, пайплайн, линт-гейты).
 
-First, run the development server:
+Тёмный дизайн с голубым свечением, контент в MDX, чистый статик.
+
+## Стек
+
+- Next.js (App Router), статический экспорт (`output: "export"`)
+- Контент: MDX в `content/changelog/` и `content/blog/`
+- Шрифты: Unbounded / Manrope / JetBrains Mono (next/font)
+- Тесты: vitest (`test/lib/content.test.ts`)
+- Деплой: GitHub Actions → Pages (`deploy.yml`)
+
+## Локально
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev      # dev-сервер
+npm run build    # статический экспорт в out/
+npm test         # vitest
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Публикация
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Записи — коммиты: `content/changelog/2026-08-24-<slug>.mdx`, пуш в main,
+деплой сам. Правило для агента — в `AGENTS.md`.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+При подключении собственного домена (CNAME): убрать
+`NEXT_PUBLIC_BASE_PATH` из workflow и указать Custom domain в настройках
+Pages репозитория.
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Дизайн-спек: `D:/WorkFlow/docs/superpowers/specs/2026-08-24-uluchshator-site-design.md`
+План: `D:/WorkFlow/docs/superpowers/plans/2026-08-24-uluchshator-site.md`

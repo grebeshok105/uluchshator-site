@@ -1,9 +1,30 @@
-<!-- BEGIN:nextjs-agent-rules -->
+# AGENTS.md — сайт улучшатора
 
-# This is NOT the Next.js you know
+## Публикация изменений (обязательно)
 
-This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` (resolved from this file's directory; in monorepos the `next` package may not be visible from the repo root) before writing any code. Heed deprecation notices.
+После любой значимой работы над улучшатором (новый скилл, фикс, замер,
+разводка каналов):
 
-This block is written and re-added by `next dev` — verify at `node_modules/next/dist/server/lib/generate-agent-files.js`. Removing it from a diff only re-creates the uncommitted change; committing it with your work keeps the tree clean.
+1. Создай запись в `content/changelog/` по шаблону ниже — коротко, по делу.
+2. Если изменение достойно разбора — добавь пост в `content/blog/`.
+3. Коммит и пуш в main. Деплой произойдёт сам (GitHub Actions).
 
-<!-- END:nextjs-agent-rules -->
+## Шаблон changelog-записи
+
+```mdx
+---
+title: <что изменилось, без глагола «реализовано»>
+date: <YYYY-MM-DD>
+tags: [изменения]
+metric: <было X → стало Y, опционально>
+---
+
+<2-4 предложения: что, зачем, какой эффект>
+```
+
+## Правила контента
+
+- Файл: `content/changelog/YYYY-MM-DD-kratkoe-nazvanie.mdx` (slug латиницей).
+- Дата — дата изменения, не дата написания.
+- Одна тема — одна запись; не смешивать.
+- Теги из фиксированного набора: `изменения` · `разбор` · `находка`.
