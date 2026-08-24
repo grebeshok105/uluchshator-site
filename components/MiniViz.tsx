@@ -1,4 +1,4 @@
-export type Viz = "term" | "chips" | "stack" | "gatebar" | "loopring" | "rows" | "conveyor" | "bars";
+export type Viz = "term" | "chips" | "stack" | "gatebar" | "loopring" | "rows" | "conveyor" | "bars" | "r4" | "fmethod" | "fjudge" | "fdomain" | "floop" | "upgrade" | "nodumb" | "frontend";
 
 const G = { stroke: "#6ea8ff" };
 const OK = { stroke: "#4ade80" };
@@ -84,6 +84,89 @@ export default function MiniViz({ kind }: { kind: Viz }) {
           <path d="M8 12.5l4.5-4 2.5 2 4-4.5" {...OK} strokeWidth="1.3" fill="none" strokeLinecap="round" strokeLinejoin="round" />
           <circle cx="41.5" cy="14" r="2.2" {...G} fill="rgba(110,168,255,0.2)" strokeWidth="1.2" />
           <path d="M39.5 9l2 2.2-2.2 2.4" {...G} strokeWidth="1.2" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      );
+    case "r4":
+      return (
+        <svg viewBox="0 0 48 32" aria-hidden>
+          <rect x="6" y="7" width="12" height="12" rx="2.5" {...G} fill="rgba(110,168,255,0.08)" strokeWidth="1.3" />
+          <rect x="34" y="7" width="12" height="12" rx="2.5" {...G} fill="rgba(110,168,255,0.08)" strokeWidth="1.3" />
+          <rect x="6" y="21" width="12" height="12" rx="2.5" {...G} fill="rgba(110,168,255,0.08)" strokeWidth="1.3" />
+          <rect x="34" y="21" width="12" height="12" rx="2.5" fill="rgba(74,222,128,0.2)" {...OK} strokeWidth="1.4" />
+          <path d="M15 13h14" {...DIM} strokeWidth="1.2" fill="none" strokeLinecap="round" />
+          <path d="M29 10l4 3-4 3" {...G} strokeWidth="1.2" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      );
+    case "fmethod":
+      return (
+        <svg viewBox="0 0 48 32" aria-hidden>
+          <circle cx="24" cy="16" r="9.5" {...G} fill="rgba(110,168,255,0.06)" strokeWidth="1.3" />
+          <circle cx="24" cy="6.5" r="1.7" {...OK} fill="rgba(74,222,128,0.25)" strokeWidth="1.1" />
+          <circle cx="33.5" cy="16" r="1.4" {...DIM} strokeWidth="1" />
+          <circle cx="24" cy="25.5" r="1.4" {...DIM} strokeWidth="1" />
+          <circle cx="14.5" cy="16" r="1.4" {...DIM} strokeWidth="1" />
+          <path d="M24 8.5v7l5 2.8" {...G} strokeWidth="1.4" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      );
+    case "fjudge":
+      return (
+        <svg viewBox="0 0 48 32" aria-hidden>
+          <path d="M24 8v16" {...G} strokeWidth="1.3" fill="none" strokeLinecap="round" />
+          <path d="M11 11h26" {...G} strokeWidth="1.3" fill="none" strokeLinecap="round" />
+          <path d="M11 11C6.5 13.5 5.5 17 5.5 20.5H16c0-3.5-1-7-5-9.5z" {...DIM} fill="rgba(138,148,166,0.1)" strokeWidth="1.2" strokeLinejoin="round" />
+          <path d="M37 11c-4.5 2.5-5.5 6-5.5 9.5H42.5C42.5 17 41.5 13.5 37 11z" {...G} fill="rgba(110,168,255,0.1)" strokeWidth="1.2" strokeLinejoin="round" />
+          <path d="M24 24l-6 4.5h12z" {...OK} fill="rgba(74,222,128,0.2)" strokeWidth="1.2" strokeLinejoin="round" />
+        </svg>
+      );
+    case "fdomain":
+      return (
+        <svg viewBox="0 0 48 32" aria-hidden>
+          <circle cx="24" cy="15.5" r="10" {...G} fill="rgba(110,168,255,0.06)" strokeWidth="1.3" />
+          <ellipse cx="24" cy="15.5" rx="4.2" ry="10" {...G} strokeOpacity="0.6" strokeWidth="1.2" />
+          <path d="M14 15.5h20" {...G} strokeOpacity="0.6" strokeWidth="1.2" fill="none" />
+          <path d="M38 26a6.5 6.5 0 0 0 2-3.5" {...OK} strokeWidth="1.3" fill="none" strokeLinecap="round" />
+          <circle cx="41" cy="19.5" r="1.6" {...OK} fill="rgba(74,222,128,0.25)" strokeWidth="1.1" />
+        </svg>
+      );
+    case "floop":
+      return (
+        <svg viewBox="0 0 48 32" aria-hidden>
+          <circle cx="24" cy="16" r="9.5" {...G} fill="none" strokeOpacity="0.55" strokeWidth="1.3" />
+          <circle cx="24" cy="16" r="5.5" {...G} fill="rgba(110,168,255,0.07)" strokeWidth="1.2" />
+          <path d="M30 8a9.5 9.5 0 0 1 4.5 12" {...G} strokeWidth="1.3" fill="none" strokeLinecap="round" />
+          <path d="M34.5 19.8V23h-3.2" {...G} strokeWidth="1.2" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+          <circle cx="24" cy="16" r="1.5" {...OK} fill="rgba(74,222,128,0.3)" strokeWidth="1" />
+        </svg>
+      );
+    case "upgrade":
+      return (
+        <svg viewBox="0 0 48 32" aria-hidden>
+          <circle cx="22" cy="16" r="7" {...G} fill="rgba(110,168,255,0.08)" strokeWidth="1.3" />
+          {[0,45,90,135,180,225,270,315].map((a) => (
+            <path key={a} d={'M' + (22 + 7*Math.cos(a*Math.PI/180)).toFixed(1) + ' ' + (16 + 7*Math.sin(a*Math.PI/180)).toFixed(1) + 'l' + (3.4*Math.cos(a*Math.PI/180)).toFixed(1) + ' ' + (3.4*Math.sin(a*Math.PI/180)).toFixed(1)} {...G} strokeWidth="1.6" strokeLinecap="round" fill="none" />
+          ))}
+          <circle cx="22" cy="16" r="2" {...OK} fill="rgba(74,222,128,0.3)" strokeWidth="1" />
+          <path d="M35 6l3.5 3.5L35 13" {...G} strokeWidth="1.3" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+          <path d="M38.5 9.5H33" {...DIM} strokeWidth="1.2" fill="none" strokeLinecap="round" />
+        </svg>
+      );
+    case "nodumb":
+      return (
+        <svg viewBox="0 0 48 32" aria-hidden>
+          <rect x="19" y="5" width="10" height="23" rx="4.5" {...G} fill="rgba(110,168,255,0.07)" strokeWidth="1.3" />
+          <circle cx="24" cy="10.5" r="2.7" fill="rgba(110,168,255,0.5)" strokeWidth="1.2" {...G} fillOpacity="0.5" />
+          <circle cx="24" cy="16" r="2.7" {...DIM} strokeWidth="1.2" fill="none" />
+          <circle cx="24" cy="21.5" r="2.7" {...OK} fill="rgba(74,222,128,0.25)" strokeWidth="1.2" fillOpacity="0.4" />
+        </svg>
+      );
+    case "frontend":
+      return (
+        <svg viewBox="0 0 48 32" aria-hidden>
+          <rect x="4" y="6" width="40" height="21" rx="4" {...G} fill="rgba(110,168,255,0.06)" strokeWidth="1.3" />
+          <rect x="8.5" y="10.5" width="31" height="12" rx="2" {...DIM} fill="none" strokeOpacity="0.7" strokeWidth="1.1" />
+          <path d="M12 14.5h9M12 18h15" {...G} strokeWidth="1.2" fill="none" strokeLinecap="round" />
+          <path d="M28 18l3-2.5 3 2.5" {...OK} strokeWidth="1.2" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+          <path d="M20 27v3.5h8V27" {...DIM} strokeWidth="1.2" fill="none" strokeLinecap="round" />
         </svg>
       );
   }

@@ -13,7 +13,7 @@ export default function Hero() {
         <h1 className={styles.title}>Улучшатор</h1>
         <p className={styles.slogan}>Пайплайн, который прокачивается сам</p>
         <div className={styles.actions}>
-          <a href="https://github.com/" className={`btn ${styles.primary}`}>
+          <a href={asset("/downloads/omp-setup-1.0.zip")} download className={`btn ${styles.primary}`}>
             <span>Установить</span>
           </a>
           <a href="/changelog" className={`btn ${styles.secondary}`}>

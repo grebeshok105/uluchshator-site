@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { asset } from "@/lib/asset";
 import styles from "./Nav.module.css";
 
 const LINKS = [
@@ -48,7 +49,7 @@ export default function Nav() {
             {l.label}
           </Link>
         ))}
-        <a href="https://github.com/" className={`btn ${styles.cta}`} onClick={() => setOpen(false)}>
+        <a href={asset("/downloads/omp-setup-1.0.zip")} download className={`btn ${styles.cta}`} onClick={() => setOpen(false)}>
           <span>Установить</span>
         </a>
       </nav>

@@ -1,3 +1,4 @@
+import { asset } from "@/lib/asset";
 import styles from "./page.module.css";
 
 export const metadata = { title: "О проекте" };
@@ -17,8 +18,8 @@ export default function AboutPage() {
           Записи живут в git, поэтому история публикаций — это история коммитов.
         </p>
       </div>
-      <a href="https://github.com/" className={`btn ${styles.cta}`}>
-        <span>Установить из репозитория</span>
+      <a href={asset("/downloads/omp-setup-1.0.zip")} download className={`btn ${styles.cta}`}>
+        <span>Скачать установку</span>
       </a>
     </main>
   );
