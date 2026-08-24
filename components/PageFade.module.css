@@ -13,15 +13,15 @@
   opacity: 0;
   visibility: hidden;
   transition:
-    opacity 0.45s var(--ease),
-    visibility 0s linear 0.45s;
+    opacity 0.3s var(--ease),
+    visibility 0s linear 0.3s;
 }
 
 .show {
   opacity: 1;
   visibility: visible;
   transition:
-    opacity 0.45s var(--ease),
+    opacity 0.25s var(--ease),
     visibility 0s;
 }
 
@@ -29,8 +29,8 @@
   opacity: 0;
   visibility: hidden;
   transition:
-    opacity 0.5s var(--ease),
-    visibility 0s linear 0.5s;
+    opacity 0.35s var(--ease),
+    visibility 0s linear 0.35s;
 }
 
 .spinner {

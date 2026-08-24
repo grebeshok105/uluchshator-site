@@ -6,18 +6,31 @@ import styles from "./PageFade.module.css";
 export default function PageFade() {
   const pathname = usePathname();
   const first = useRef(true);
+  const backNav = useRef(false);
   const [visible, setVisible] = useState(false);
   const [run, setRun] = useState(0);
+
+  useEffect(() => {
+    const onPop = () => {
+      backNav.current = true;
+    };
+    window.addEventListener("popstate", onPop);
+    return () => window.removeEventListener("popstate", onPop);
+  }, []);
 
   useEffect(() => {
     if (first.current) {
       first.current = false;
       return;
     }
+    if (backNav.current) {
+      backNav.current = false;
+      return;
+    }
     setRun((r) => r + 1);
     setVisible(true);
     window.dispatchEvent(new CustomEvent("lenis-reset"));
-    const t = setTimeout(() => setVisible(false), 1500);
+    const t = setTimeout(() => setVisible(false), 550);
     return () => clearTimeout(t);
   }, [pathname]);
 
