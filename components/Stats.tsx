@@ -11,23 +11,25 @@ const ITEMS = [
 export default function Stats() {
   return (
     <section className={styles.stats}>
-      <p className={styles.number}>04</p>
-      <h2 className={styles.heading}>Сейчас</h2>
-      <dl className={styles.grid}>
-        {ITEMS.map((i) => (
-          <div key={i.label} className={styles.cell}>
-            <dt className={styles.value}>{i.value}</dt>
-            <dd className={styles.label}>{i.label}</dd>
-          </div>
-        ))}
-      </dl>
-      <ul className={styles.statuses}>
-        {SITE.statuses.map((s) => (
-          <li key={s} className={styles.statusOk}>
-            ok: {s}
-          </li>
-        ))}
-      </ul>
+      <div className={styles.inner}>
+        <p className={styles.number}>04</p>
+        <h2 className={styles.heading}>Сейчас</h2>
+        <dl className={styles.grid}>
+          {ITEMS.map((i) => (
+            <div key={i.label} className={styles.cell}>
+              <dt className={styles.value}>{i.value}</dt>
+              <dd className={styles.label}>{i.label}</dd>
+            </div>
+          ))}
+        </dl>
+        <ul className={styles.statuses}>
+          {SITE.statuses.map((s) => (
+            <li key={s} className={styles.statusOk}>
+              ok: {s}
+            </li>
+          ))}
+        </ul>
+      </div>
     </section>
   );
 }

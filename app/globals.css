@@ -1,11 +1,13 @@
 :root {
-  --bg: #070b12;
-  --surface: #0d1420;
+  --bg: #050a14;
+  --surface: #0c1626;
+  --surface-soft: rgba(13, 20, 32, 0.42);
   --glow-a: #6ea8ff;
   --glow-b: #9bdcff;
   --text: #e8edf6;
   --text-dim: #8a94a6;
   --ok: #4ade80;
+  --hairline: rgba(110, 168, 255, 0.14);
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
   --font-display: "Onest", sans-serif;
   --font-body: "Onest", sans-serif;
@@ -27,8 +29,11 @@ html {
 body {
   min-height: 100vh;
   background:
-    radial-gradient(1200px 500px at 70% -10%, rgba(110, 168, 255, 0.1), transparent 60%),
-    radial-gradient(circle at 30% 10%, rgba(110, 168, 255, 0.04) 1px, transparent 1px) 0 0 / 48px 48px,
+    radial-gradient(900px 600px at 88% 8%, rgba(110, 168, 255, 0.09), transparent 62%),
+    radial-gradient(700px 500px at 6% 30%, rgba(110, 168, 255, 0.06), transparent 60%),
+    radial-gradient(800px 700px at 92% 68%, rgba(155, 220, 255, 0.05), transparent 55%),
+    radial-gradient(650px 550px at 4% 82%, rgba(110, 168, 255, 0.05), transparent 58%),
+    radial-gradient(circle at 30% 10%, rgba(110, 168, 255, 0.05) 1px, transparent 1px) 0 0 / 44px 44px,
     var(--bg);
 }
 
@@ -73,7 +78,7 @@ p {
 .divider {
   height: 1px;
   margin: 0 auto;
-  width: min(960px, 88vw);
+  width: min(1200px, 90vw);
   background: linear-gradient(
     90deg,
     transparent,
@@ -97,6 +102,33 @@ p {
     transparent 22px 26px
   );
   opacity: 0.7;
+}
+
+/* ряд маленьких квадратов-пикселей (декор секций) */
+.pix {
+  display: flex;
+  gap: 5px;
+}
+
+.pix i {
+  width: 9px;
+  height: 9px;
+  display: block;
+  background: var(--glow-a);
+  opacity: 0.16;
+  transition: opacity 0.4s var(--ease);
+}
+
+.pix i:nth-child(3n) {
+  background: var(--glow-b);
+}
+
+.pix i:nth-child(4n) {
+  opacity: 0.34;
+}
+
+.pix i:nth-child(2n) {
+  opacity: 0.1;
 }
 
 /* кнопки: два типа — solid pill и hairline (CTA-01); fill-механика (CTA-05) */
@@ -135,6 +167,10 @@ p {
 @media (prefers-reduced-motion: reduce) {
   .cursor {
     animation: none;
+  }
+
+  .pix i {
+    transition: none;
   }
 
   .btn::after,

@@ -1,5 +1,5 @@
 .log {
-  max-width: 760px;
+  max-width: 900px;
   margin: 0 auto;
   padding: 96px 24px;
 }
@@ -15,7 +15,7 @@
 .heading {
   font-family: var(--font-display);
   font-weight: 300;
-  font-size: clamp(26px, 4vw, 42px);
+  font-size: clamp(30px, 4.5vw, 54px);
   line-height: 1;
   letter-spacing: -0.03em;
   margin-bottom: 28px;

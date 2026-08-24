@@ -4,9 +4,9 @@
   grid-template-columns: 1fr 1.1fr;
   align-items: end;
   gap: 48px;
-  max-width: 1200px;
+  max-width: 1280px;
   margin: 0 auto;
-  padding: 0 48px 64px;
+  padding: 0 48px 72px;
 }
 
 .text {
@@ -45,7 +45,7 @@
 .title {
   font-family: var(--font-display);
   font-weight: 300;
-  font-size: clamp(56px, 9vw, 128px);
+  font-size: clamp(60px, 10vw, 148px);
   line-height: 0.88;
   letter-spacing: -0.035em;
   animation: breathe 4s ease-in-out infinite;

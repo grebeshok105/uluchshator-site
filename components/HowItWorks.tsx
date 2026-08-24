@@ -21,16 +21,18 @@ const STEPS = [
 export default function HowItWorks() {
   return (
     <section className={styles.how}>
-      <p className={styles.number}>03</p>
-      <h2 className={styles.heading}>Запустил. Улучшилось.</h2>
-      <div className={styles.steps}>
-        {STEPS.map((s) => (
-          <div key={s.n} className={styles.step}>
-            <span className={styles.stepN}>{s.n}</span>
-            <h3 className={styles.stepTitle}>{s.title}</h3>
-            <p className={styles.stepText}>{s.text}</p>
-          </div>
-        ))}
+      <div className={styles.howInner}>
+        <p className={styles.number}>03</p>
+        <h2 className={styles.heading}>Запустил. Улучшилось.</h2>
+        <div className={styles.steps}>
+          {STEPS.map((s) => (
+            <div key={s.n} className={styles.step}>
+              <span className={styles.stepN}>{s.n}</span>
+              <h3 className={styles.stepTitle}>{s.title}</h3>
+              <p className={styles.stepText}>{s.text}</p>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );

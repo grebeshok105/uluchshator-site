@@ -1,3 +1,4 @@
+import FeatureCard from "@/components/FeatureCard";
 import { asset } from "@/lib/asset";
 import styles from "./Features.module.css";
 
@@ -59,33 +60,38 @@ const SHOTS = [
 
 export default function Features() {
   return (
-    <section className={styles.features} id="features">
-      <p className={styles.number}>02</p>
-      <h2 className={styles.heading}>Всё уже в коробке</h2>
-      <div className={styles.grid}>
-        {FEATURES.map((f) => (
-          <div key={f.title} className={styles.card}>
-            <svg className={styles.icon} aria-hidden>
-              <use href={asset(`/icons/${f.icon}.svg#icon`)} />
-            </svg>
-            <h3 className={styles.cardTitle}>{f.title}</h3>
-            <p className={styles.cardText}>{f.text}</p>
+    <section className={styles.features}>
+      <div className={styles.inner}>
+        <div className={styles.head}>
+          <p className={styles.number}>02</p>
+          <div className={styles.pixRow} aria-hidden>
+            <span className="pix">
+              {Array.from({ length: 12 }, (_, i) => (
+                <i key={i} />
+              ))}
+            </span>
           </div>
-        ))}
-      </div>
-      <div className={styles.shots}>
-        {SHOTS.map((s) => (
-          <figure key={s.title} className={styles.figure}>
-            <div className={styles.window}>
-              <div className={styles.windowBar}>
-                <span className={styles.windowTitle}>{s.title}</span>
+          <h2 className={styles.heading}>Всё уже в коробке</h2>
+        </div>
+        <div className={styles.grid}>
+          {FEATURES.map((f) => (
+            <FeatureCard key={f.title} icon={f.icon} title={f.title} text={f.text} />
+          ))}
+        </div>
+        <div className={styles.shots}>
+          {SHOTS.map((s) => (
+            <figure key={s.title} className={styles.figure}>
+              <div className={styles.window}>
+                <div className={styles.windowBar}>
+                  <span className={styles.windowTitle}>{s.title}</span>
+                </div>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={asset(s.src)} alt="" className={styles.shot} loading="lazy" />
               </div>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={asset(s.src)} alt="" className={styles.shot} loading="lazy" />
-            </div>
-            <figcaption className={styles.caption}>{s.caption}</figcaption>
-          </figure>
-        ))}
+              <figcaption className={styles.caption}>{s.caption}</figcaption>
+            </figure>
+          ))}
+        </div>
       </div>
     </section>
   );

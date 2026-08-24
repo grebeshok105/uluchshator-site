@@ -1,8 +1,14 @@
 .stats {
+  background: rgba(12, 22, 38, 0.32);
+  border-top: 1px solid var(--hairline);
+  border-bottom: 1px solid var(--hairline);
+  padding: 112px 24px;
+  text-align: center;
+}
+
+.inner {
   max-width: 960px;
   margin: 0 auto;
-  padding: 96px 24px;
-  text-align: center;
 }
 
 .number {
@@ -16,7 +22,7 @@
 .heading {
   font-family: var(--font-display);
   font-weight: 300;
-  font-size: clamp(26px, 4vw, 42px);
+  font-size: clamp(30px, 4.5vw, 54px);
   line-height: 1;
   letter-spacing: -0.03em;
   margin-bottom: 40px;

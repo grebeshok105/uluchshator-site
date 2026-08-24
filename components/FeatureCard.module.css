@@ -1,0 +1,65 @@
+.card {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(110, 168, 255, 0.12);
+  border-radius: 16px;
+  padding: 26px 22px 24px;
+  background:
+    radial-gradient(240px 180px at var(--mx, 50%) var(--my, 50%), rgba(110, 168, 255, 0.09), transparent 70%),
+    rgba(13, 22, 38, 0.55);
+  transition:
+    border-color 0.35s var(--ease),
+    transform 0.6s var(--ease);
+}
+
+.card:hover {
+  border-color: rgba(110, 168, 255, 0.42);
+  transform: translateY(-4px);
+}
+
+.iconBox {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  margin-bottom: 20px;
+  border: 1px solid rgba(110, 168, 255, 0.3);
+  border-radius: 10px;
+  background: rgba(110, 168, 255, 0.06);
+  transition:
+    border-color 0.4s var(--ease),
+    box-shadow 0.4s var(--ease);
+}
+
+.card:hover .iconBox {
+  border-color: rgba(155, 220, 255, 0.7);
+  box-shadow: 0 0 18px rgba(110, 168, 255, 0.3);
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  color: var(--glow-a);
+}
+
+.title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 16.5px;
+  letter-spacing: -0.015em;
+  margin-bottom: 8px;
+}
+
+.text {
+  color: var(--text-dim);
+  font-size: 13.5px;
+  line-height: 1.62;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card {
+    transition: none;
+  }
+}
