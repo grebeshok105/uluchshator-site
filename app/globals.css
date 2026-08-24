@@ -148,11 +148,11 @@ body::after {
 }
 
 .pix i {
-  width: 9px;
-  height: 9px;
+  width: 11px;
+  height: 11px;
   display: block;
   background: var(--glow-a);
-  opacity: 0.16;
+  opacity: 0.22;
   transition: opacity 0.4s var(--ease);
 }
 
@@ -161,7 +161,7 @@ body::after {
 }
 
 .pix i:nth-child(4n) {
-  opacity: 0.34;
+  opacity: 0.5;
 }
 
 .pix i:nth-child(2n) {

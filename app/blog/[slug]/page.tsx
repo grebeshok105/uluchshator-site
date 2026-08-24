@@ -1,5 +1,6 @@
 import { MDXRemote } from "next-mdx-remote/rsc";
 import rehypeHighlight from "rehype-highlight";
+import remarkGfm from "remark-gfm";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getAllEntries, getEntryBySlug } from "@/lib/content";
@@ -31,7 +32,7 @@ export default async function EntryPage({ params }: { params: Promise<{ slug: st
       <article className={styles.body}>
         <MDXRemote
           source={entry.content}
-          options={{ mdxOptions: { rehypePlugins: [rehypeHighlight] } }}
+          options={{ mdxOptions: { rehypePlugins: [rehypeHighlight], remarkPlugins: [remarkGfm] } }}
         />
       </article>
       <Link href="/blog" className={styles.back}>

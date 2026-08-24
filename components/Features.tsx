@@ -1,45 +1,53 @@
-import FeatureCard from "@/components/FeatureCard";
+import FeatureCard, { type Viz } from "@/components/FeatureCard";
 import { asset } from "@/lib/asset";
 import styles from "./Features.module.css";
 
-const FEATURES = [
+const FEATURES: { icon: string; viz: Viz; title: string; text: string }[] = [
   {
     icon: "bolt",
+    viz: "term",
     title: "Автономия по умолчанию",
     text: "Агент сам решает, что делать дальше: берёт контекст из баз и движется без команд.",
   },
   {
     icon: "skill",
+    viz: "chips",
     title: "Скиллы под каждую задачу",
     text: "Под нетривиальную работу подключается профильный скилл: дебаг, рефакторинг, ресёрч.",
   },
   {
     icon: "db",
+    viz: "stack",
     title: "Базы знаний",
     text: "Findings, RAG и Mnemopi разведены по каналам: одно событие, один канал, ноль дублей.",
   },
   {
     icon: "gate",
+    viz: "gatebar",
     title: "Линт-гейт перед сдачей",
     text: "Битый frontmatter и лимиты файлов ловятся до сдачи, а не ревьюером.",
   },
   {
     icon: "loop",
+    viz: "loopring",
     title: "Каждый цикл — сильнее",
     text: "Замеры «было / стало» фиксируются в базе, правила уточняются после каждого прогона.",
   },
   {
     icon: "mem",
+    viz: "rows",
     title: "Память между сессиями",
     text: "Факты о владельце и проекте переживают перезапуски: агент помнит, с чем работает.",
   },
   {
     icon: "pipe",
+    viz: "conveyor",
     title: "Пайплайн прокачивается сам",
     text: "Правила, скиллы и базы обновляются внутри рабочего цикла, без ручного ухода.",
   },
   {
     icon: "metric",
+    viz: "bars",
     title: "Улучшение в цифрах",
     text: "Любое «стало лучше» — только с замером: было X, стало Y, дельта в базе.",
   },
@@ -75,7 +83,7 @@ export default function Features() {
         </div>
         <div className={styles.grid}>
           {FEATURES.map((f) => (
-            <FeatureCard key={f.title} icon={f.icon} title={f.title} text={f.text} />
+            <FeatureCard key={f.title} icon={f.icon} viz={f.viz} title={f.title} text={f.text} />
           ))}
         </div>
         <div className={styles.shots}>

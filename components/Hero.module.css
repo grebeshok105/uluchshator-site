@@ -2,11 +2,11 @@
   min-height: 100svh;
   display: grid;
   grid-template-columns: 1fr 1.1fr;
-  align-items: end;
+  align-items: start;
   gap: 48px;
   max-width: 1280px;
   margin: 0 auto;
-  padding: 0 48px 72px;
+  padding: 16vh 48px 0;
 }
 
 .text {
@@ -14,8 +14,6 @@
   flex-direction: column;
   align-items: flex-start;
   gap: 18px;
-  align-self: end;
-  padding-bottom: 24px;
 }
 
 .status {
@@ -142,7 +140,7 @@
   display: block;
   width: 100%;
   height: auto;
-  max-height: 56vh;
+  max-height: 52vh;
   object-fit: cover;
   object-position: top;
 }
