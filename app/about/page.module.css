@@ -5,7 +5,7 @@
 }
 
 .h1 {
-  font-family: var(--font-unbounded);
+  font-family: var(--font-display);
   font-size: clamp(28px, 5vw, 40px);
 }
 
@@ -32,8 +32,8 @@
   border-radius: 999px;
   font-size: 15px;
   transition:
-    box-shadow 0.3s cubic-bezier(0.32, 0.72, 0, 1),
-    transform 0.2s cubic-bezier(0.32, 0.72, 0, 1);
+    box-shadow 0.3s cubic-bezier(.22, 1, .36, 1),
+    transform 0.2s cubic-bezier(.22, 1, .36, 1);
 }
 
 .cta:hover {

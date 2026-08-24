@@ -1,0 +1,46 @@
+.manifest {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 96px 24px;
+  display: grid;
+  grid-template-columns: 72px 1.2fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+.number {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--glow-a);
+  letter-spacing: 0.15em;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: clamp(30px, 4.5vw, 52px);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  text-wrap: balance;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.body p {
+  color: var(--text-dim);
+  font-size: 15px;
+  line-height: 1.65;
+  max-width: 46ch;
+}
+
+@media (max-width: 860px) {
+  .manifest {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 64px 24px;
+  }
+}

@@ -21,19 +21,19 @@
 .home {
   color: var(--text);
   border: 1px solid rgba(110, 168, 255, 0.4);
-  padding: 10px 24px;
-  border-radius: 999px;
-  font-family: var(--font-manrope);
+  padding: 12px 26px;
+  font-family: var(--font-body);
   font-size: 14px;
-  transition: box-shadow 0.3s cubic-bezier(0.32, 0.72, 0, 1), transform 0.2s cubic-bezier(0.32, 0.72, 0, 1);
+  transition: border-color 0.3s var(--ease), box-shadow 0.3s var(--ease);
 }
 
 .home:hover {
-  box-shadow: 0 0 20px rgba(110, 168, 255, 0.3);
+  border-color: rgba(110, 168, 255, 0.8);
+  box-shadow: 0 0 20px rgba(110, 168, 255, 0.25);
 }
 
-.home:active {
-  transform: scale(0.97);
+.home::after {
+  background: rgba(110, 168, 255, 0.12);
 }
 
 .home:focus-visible {

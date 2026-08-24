@@ -5,7 +5,7 @@
 }
 
 .h1 {
-  font-family: var(--font-unbounded);
+  font-family: var(--font-display);
   font-size: clamp(28px, 5vw, 40px);
 }
 

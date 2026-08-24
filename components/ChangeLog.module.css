@@ -4,9 +4,20 @@
   padding: 96px 24px;
 }
 
+.number {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--glow-a);
+  letter-spacing: 0.15em;
+  margin-bottom: 14px;
+}
+
 .heading {
-  font-family: var(--font-unbounded);
-  font-size: 24px;
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: clamp(26px, 4vw, 42px);
+  line-height: 1;
+  letter-spacing: -0.03em;
   margin-bottom: 28px;
 }
 
@@ -24,7 +35,7 @@
   font-size: 14px;
   padding: 12px 14px;
   border-radius: 12px;
-  transition: background 0.3s cubic-bezier(0.32, 0.72, 0, 1);
+  transition: background 0.35s var(--ease);
 }
 
 .row:hover {
@@ -43,6 +54,7 @@
 
 .text {
   color: var(--text);
+  font-family: var(--font-body);
 }
 
 .metric {
@@ -64,7 +76,7 @@
   color: var(--glow-b);
   font-family: var(--font-mono);
   font-size: 14px;
-  transition: text-shadow 0.3s cubic-bezier(0.32, 0.72, 0, 1);
+  transition: text-shadow 0.35s var(--ease);
 }
 
 .all:hover {

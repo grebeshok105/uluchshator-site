@@ -5,6 +5,7 @@ import styles from "./ChangeLog.module.css";
 export default function ChangeLog({ entries }: { entries: Entry[] }) {
   return (
     <section className={styles.log}>
+      <p className={styles.number}>05</p>
       <h2 className={styles.heading}>Каждый цикл — сильнее</h2>
       <div className={styles.rows}>
         {entries.map((e) => (
@@ -18,7 +19,7 @@ export default function ChangeLog({ entries }: { entries: Entry[] }) {
       <div className={styles.foot}>
         <span className="cursor" aria-hidden />
         <Link href="/changelog" className={styles.all}>
-          Вся история →
+          Вся история
         </Link>
       </div>
     </section>

@@ -6,8 +6,9 @@
   --text: #e8edf6;
   --text-dim: #8a94a6;
   --ok: #4ade80;
-  --font-unbounded: "Unbounded", sans-serif;
-  --font-manrope: "Manrope", sans-serif;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --font-display: "Onest", sans-serif;
+  --font-body: "Onest", sans-serif;
   --font-mono: "JetBrains Mono", monospace;
 }
 
@@ -20,7 +21,7 @@
 html {
   background: var(--bg);
   color: var(--text);
-  font-family: var(--font-manrope);
+  font-family: var(--font-body);
 }
 
 body {
@@ -38,6 +39,16 @@ a {
 
 button {
   font-family: inherit;
+}
+
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
 }
 
 @keyframes blink {
@@ -63,7 +74,14 @@ button {
   height: 1px;
   margin: 0 auto;
   width: min(960px, 88vw);
-  background: linear-gradient(90deg, transparent, var(--glow-a) 25%, var(--glow-b) 50%, var(--glow-a) 75%, transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--glow-a) 25%,
+    var(--glow-b) 50%,
+    var(--glow-a) 75%,
+    transparent
+  );
   mask-image: repeating-linear-gradient(
     90deg,
     #000 0 6px,
@@ -81,8 +99,46 @@ button {
   opacity: 0.7;
 }
 
+/* кнопки: два типа — solid pill и hairline (CTA-01); fill-механика (CTA-05) */
+.btn {
+  position: relative;
+  overflow: hidden;
+  border-radius: 999px;
+  font-weight: 400;
+  transition: transform 0.2s var(--ease);
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+.btn::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s var(--ease);
+  z-index: 0;
+}
+
+.btn:hover::after {
+  transform: scaleX(1);
+}
+
+.btn > * {
+  position: relative;
+  z-index: 1;
+  transition: color 0.32s var(--ease);
+}
+
 @media (prefers-reduced-motion: reduce) {
   .cursor {
     animation: none;
+  }
+
+  .btn::after,
+  .btn > * {
+    transition: none;
   }
 }

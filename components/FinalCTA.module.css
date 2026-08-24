@@ -1,0 +1,59 @@
+.cta {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 120px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+  text-align: center;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: clamp(30px, 5vw, 56px);
+  line-height: 1;
+  letter-spacing: -0.035em;
+  animation: breathe 4s ease-in-out infinite;
+}
+
+.button {
+  background: linear-gradient(135deg, var(--glow-a), var(--glow-b));
+  color: #070b12;
+  font-size: 16px;
+  padding: 16px 40px;
+  box-shadow: 0 0 28px rgba(110, 168, 255, 0.4);
+  transition: box-shadow 0.3s var(--ease);
+}
+
+.button:hover {
+  box-shadow: 0 0 48px rgba(110, 168, 255, 0.65);
+}
+
+.button::after {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.note {
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  color: var(--text-dim);
+  letter-spacing: 0.06em;
+}
+
+@keyframes breathe {
+  0%,
+  100% {
+    text-shadow: 0 0 18px rgba(110, 168, 255, 0.35), 0 0 40px rgba(110, 168, 255, 0.12);
+  }
+  50% {
+    text-shadow: 0 0 30px rgba(155, 220, 255, 0.6), 0 0 70px rgba(110, 168, 255, 0.25);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .title {
+    animation: none;
+  }
+}

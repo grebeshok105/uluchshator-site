@@ -24,7 +24,7 @@ export default async function EntryPage({ params }: { params: Promise<{ slug: st
   return (
     <main className={styles.main}>
       <p className={styles.meta}>
-        {entry.date} · {entry.tags.join(" · ")}
+        {entry.date} / {entry.tags.join(" / ")}
       </p>
       <h1 className={styles.h1}>{entry.title}</h1>
       {entry.metric && <p className={styles.metric}>{entry.metric}</p>}
@@ -35,7 +35,7 @@ export default async function EntryPage({ params }: { params: Promise<{ slug: st
         />
       </article>
       <Link href="/blog" className={styles.back}>
-        ← назад
+        назад
       </Link>
     </main>
   );

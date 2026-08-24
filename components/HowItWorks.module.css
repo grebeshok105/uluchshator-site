@@ -1,0 +1,71 @@
+.how {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 96px 24px;
+  display: grid;
+  grid-template-columns: 72px 1fr;
+  gap: 16px 48px;
+}
+
+.number {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--glow-a);
+  letter-spacing: 0.15em;
+}
+
+.heading {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: clamp(30px, 4.5vw, 52px);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  margin-bottom: 40px;
+}
+
+.steps {
+  grid-column: 2;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.stepN {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--glow-a);
+  letter-spacing: 0.15em;
+}
+
+.stepTitle {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 19px;
+  letter-spacing: -0.015em;
+}
+
+.stepText {
+  color: var(--text-dim);
+  font-size: 14px;
+  line-height: 1.6;
+  max-width: 40ch;
+}
+
+@media (max-width: 860px) {
+  .how {
+    grid-template-columns: 1fr;
+    padding: 64px 20px;
+  }
+
+  .steps {
+    grid-column: 1;
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+}

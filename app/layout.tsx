@@ -1,20 +1,14 @@
 import type { Metadata } from "next";
-import { Unbounded, Manrope, JetBrains_Mono } from "next/font/google";
+import { Onest, JetBrains_Mono } from "next/font/google";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import "./globals.css";
 import "highlight.js/styles/github-dark.css";
 
-const unbounded = Unbounded({
+const onest = Onest({
   subsets: ["cyrillic", "latin"],
-  variable: "--font-unbounded",
-  weight: ["400", "600", "700"],
-});
-
-const manrope = Manrope({
-  subsets: ["cyrillic", "latin"],
-  variable: "--font-manrope",
-  weight: ["400", "500", "600", "700"],
+  variable: "--font-onest",
+  weight: ["300", "400"],
 });
 
 const mono = JetBrains_Mono({
@@ -30,7 +24,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="ru" className={`${unbounded.variable} ${manrope.variable} ${mono.variable}`}>
+    <html lang="ru" className={`${onest.variable} ${mono.variable}`}>
       <body>
         <Nav />
         {children}

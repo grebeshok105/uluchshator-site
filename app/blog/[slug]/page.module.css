@@ -11,7 +11,7 @@
 }
 
 .h1 {
-  font-family: var(--font-unbounded);
+  font-family: var(--font-display);
   font-size: clamp(26px, 4.5vw, 40px);
   margin: 12px 0;
 }
@@ -57,7 +57,7 @@
   color: var(--glow-b);
   font-family: var(--font-mono);
   font-size: 14px;
-  transition: text-shadow 0.3s cubic-bezier(0.32, 0.72, 0, 1);
+  transition: text-shadow 0.3s cubic-bezier(.22, 1, .36, 1);
 }
 
 .back:hover {

@@ -48,8 +48,8 @@ export default function Nav() {
             {l.label}
           </Link>
         ))}
-        <a href="https://github.com/" className={styles.cta} onClick={() => setOpen(false)}>
-          Установить
+        <a href="https://github.com/" className={`btn ${styles.cta}`} onClick={() => setOpen(false)}>
+          <span>Установить</span>
         </a>
       </nav>
       <button

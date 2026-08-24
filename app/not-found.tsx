@@ -8,8 +8,8 @@ export default function NotFound() {
         <span className={styles.prompt}>user@uluchshator:~$</span> command not found: /страница
       </p>
       <span className="cursor" aria-hidden />
-      <Link href="/" className={styles.home}>
-        на главную
+      <Link href="/" className={`btn ${styles.home}`}>
+        <span>на главную</span>
       </Link>
     </main>
   );

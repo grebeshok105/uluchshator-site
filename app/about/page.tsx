@@ -17,8 +17,8 @@ export default function AboutPage() {
           Записи живут в git, поэтому история публикаций — это история коммитов.
         </p>
       </div>
-      <a href="https://github.com/" className={styles.cta}>
-        Установить из репозитория →
+      <a href="https://github.com/" className={`btn ${styles.cta}`}>
+        <span>Установить из репозитория</span>
       </a>
     </main>
   );

@@ -33,7 +33,7 @@ export default function PostList({ entries }: { entries: Entry[] }) {
             <li key={e.slug}>
               <Link href={`/blog/${e.slug}`} className={styles.card}>
                 <span className={styles.date}>
-                  {e.date} · {e.type === "changelog" ? "изменение" : "пост"}
+                  {e.date} / {e.type === "changelog" ? "изменение" : "пост"}
                 </span>
                 <h3 className={styles.title}>{e.title}</h3>
                 {e.metric && <span className={styles.metric}>{e.metric}</span>}
