@@ -3,6 +3,7 @@ import { Unbounded, Manrope, JetBrains_Mono } from "next/font/google";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import "./globals.css";
+import "highlight.js/styles/github-dark.css";
 
 const unbounded = Unbounded({
   subsets: ["cyrillic", "latin"],

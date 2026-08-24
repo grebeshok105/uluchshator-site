@@ -1,0 +1,71 @@
+.main {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 48px 24px 96px;
+}
+
+.meta {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--text-dim);
+}
+
+.h1 {
+  font-family: var(--font-unbounded);
+  font-size: clamp(26px, 4.5vw, 40px);
+  margin: 12px 0;
+}
+
+.metric {
+  color: var(--glow-a);
+  font-family: var(--font-mono);
+}
+
+.body {
+  margin-top: 28px;
+  line-height: 1.75;
+  font-size: 16px;
+}
+
+.body p {
+  margin-bottom: 16px;
+}
+
+.body :not(pre) > code {
+  background: var(--surface);
+  padding: 2px 6px;
+  border-radius: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+  color: var(--glow-b);
+}
+
+.body pre {
+  background: var(--surface);
+  border: 1px solid rgba(110, 168, 255, 0.15);
+  border-radius: 12px;
+  padding: 16px;
+  overflow-x: auto;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  margin-bottom: 16px;
+}
+
+.back {
+  display: inline-block;
+  margin-top: 40px;
+  color: var(--glow-b);
+  font-family: var(--font-mono);
+  font-size: 14px;
+  transition: text-shadow 0.3s cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+.back:hover {
+  text-shadow: 0 0 14px rgba(155, 220, 255, 0.5);
+}
+
+.back:focus-visible {
+  outline: 2px solid var(--glow-a);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
