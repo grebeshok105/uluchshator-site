@@ -32,9 +32,8 @@ export default function PostList({ entries }: { entries: Entry[] }) {
           {filtered.map((e) => (
             <li key={e.slug}>
               <Link href={`/blog/${e.slug}`} className={styles.card}>
-                <span className={styles.date}>
-                  {e.date} / {e.type === "changelog" ? "изменение" : "пост"}
-                </span>
+                <span className={styles.date}>{e.date}</span>
+                <span className={styles.kind}>{e.type === "changelog" ? "изменение" : "пост"}</span>
                 <h3 className={styles.title}>{e.title}</h3>
                 {e.metric && <span className={styles.metric}>{e.metric}</span>}
                 <p className={styles.excerpt}>{e.excerpt}</p>

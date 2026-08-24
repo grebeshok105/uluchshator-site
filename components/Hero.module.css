@@ -103,7 +103,7 @@
 }
 
 .stage {
-  align-self: end;
+  align-self: start;
   justify-self: stretch;
   min-width: 0;
 }

@@ -18,28 +18,28 @@ export default async function Home() {
         <Hero />
       </Reveal>
       <div className="divider" aria-hidden />
-      <Reveal delay={80}>
+      <Reveal delay={20}>
         <StackStrip />
       </Reveal>
       <div className="divider" aria-hidden />
-      <Reveal delay={120}>
+      <Reveal delay={40}>
         <Manifest />
       </Reveal>
-      <Reveal delay={140}>
+      <Reveal delay={60}>
         <Features />
       </Reveal>
       <div className="divider" aria-hidden />
-      <Reveal delay={120}>
+      <Reveal delay={40}>
         <HowItWorks />
       </Reveal>
       <div className="divider" aria-hidden />
-      <Reveal delay={100}>
+      <Reveal delay={50}>
         <Stats />
       </Reveal>
-      <Reveal delay={140}>
+      <Reveal delay={60}>
         <ChangeLog entries={logEntries} />
       </Reveal>
-      <Reveal delay={100}>
+      <Reveal delay={50}>
         <FinalCTA />
       </Reveal>
     </main>

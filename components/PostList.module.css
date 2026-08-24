@@ -34,9 +34,10 @@
 }
 
 .active {
-  border-color: var(--glow-a);
-  color: var(--text);
-  box-shadow: 0 0 14px rgba(110, 168, 255, 0.35);
+  border-color: var(--glow-b);
+  color: var(--glow-b);
+  background: rgba(110, 168, 255, 0.1);
+  box-shadow: 0 0 12px rgba(110, 168, 255, 0.18);
 }
 
 .list {
@@ -76,6 +77,20 @@
   font-family: var(--font-mono);
   font-size: 12px;
   color: var(--text-dim);
+  white-space: nowrap;
+}
+
+.kind {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-dim);
+  margin-left: 12px;
+  letter-spacing: 0.05em;
+  opacity: 0.85;
+}
+
+.kind::after {
+  content: "";
 }
 
 .title {

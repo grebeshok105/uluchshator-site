@@ -23,10 +23,13 @@ function MiniViz({ kind }: { kind: Viz }) {
     case "chips":
       return (
         <svg viewBox="0 0 48 32" className={styles.viz} aria-hidden>
-          <rect x="2" y="10" width="13" height="13" rx="3" {...G} fill="none" strokeWidth="1.3" />
-          <path d="M6.5 14.5v4M8.5 16.5h-4" {...G} strokeWidth="1.1" fill="none" strokeLinecap="round" />
-          <rect x="21" y="7" width="12" height="9" rx="2" {...DIM} fill="none" strokeWidth="1.2" />
-          <rect x="21" y="20" width="17" height="6" rx="2" {...G} fill="none" strokeOpacity="0.6" strokeWidth="1.2" />
+          <rect x="2" y="8" width="15" height="15" rx="4" fill="rgba(110,168,255,0.14)" {...G} fillOpacity="0.5" strokeWidth="1.3" />
+          <path d="M9.5 12.5v6M6.5 15.5h6" {...G} strokeWidth="1.2" fill="none" strokeLinecap="round" />
+          <rect x="23" y="6" width="11" height="8" rx="4" {...DIM} fill="none" strokeWidth="1.2" />
+          <path d="M24.8 8.4l2.4 2.4 3.6-3.8" {...DIM} strokeWidth="1.2" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+          <rect x="23" y="19" width="15" height="9" rx="4.5" {...G} fill="rgba(110,168,255,0.08)" strokeOpacity="0.7" strokeWidth="1.2" />
+          <rect x="26" y="22" width="6" height="2.6" rx="1.3" fill="#6ea8ff" fillOpacity="0.55" />
+          <rect x="26" y="25.5" width="9" height="2.6" rx="1.3" fill="#6ea8ff" fillOpacity="0.25" />
         </svg>
       );
     case "stack":
@@ -41,19 +44,21 @@ function MiniViz({ kind }: { kind: Viz }) {
     case "gatebar":
       return (
         <svg viewBox="0 0 48 32" className={styles.viz} aria-hidden>
-          <path d="M5 22h30" {...DIM} strokeWidth="1.3" fill="none" strokeLinecap="round" strokeDasharray="2 3" />
-          <rect x="2" y="12" width="36" height="5" rx="2.5" {...G} fill="none" strokeOpacity="0.5" strokeWidth="1.3" />
-          <path d="M2 14.5h36" {...G} fill="none" strokeOpacity="0.25" strokeWidth="1" />
-          <circle cx="38" cy="14.5" r="3" fill="#4ade80" fillOpacity="0.9" />
-          <path d="M6 13h8M10 13v-5" {...G} strokeWidth="1.2" fill="none" strokeLinecap="round" />
+          <path d="M6 8.2l9-3.5 9 3.5v6.4c0 4.6-3.4 8.3-9 9.6-5.6-1.3-9-5-9-9.6z" {...G} fill="rgba(110,168,255,0.1)" strokeOpacity="0.7" strokeWidth="1.2" strokeLinejoin="round" />
+          <path d="M10.5 15.4l2 2 3.4-3.6" {...OK} strokeWidth="1.4" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+          <path d="M33 12.5v3.5h3.5" {...G} strokeWidth="1.3" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+          <path d="M32.8 13.6a7 7 0 1 1-1.8-5.6" {...G} strokeOpacity="0.5" strokeWidth="1.2" fill="none" strokeLinecap="round" />
+          <circle cx="36.5" cy="13" r="2.4" fill="#4ade80" fillOpacity="0.85" />
         </svg>
       );
     case "loopring":
       return (
         <svg viewBox="0 0 48 32" className={styles.viz} aria-hidden>
-          <circle cx="24" cy="16" r="9.5" {...G} fill="none" strokeWidth="1.4" />
-          <path d="M24 11.5v6.5l4 2" {...G} fill="none" strokeWidth="1.4" strokeLinecap="round" />
-          <path d="M16.5 24.5a9.5 9.5 0 1 0 9-12.7" {...G} fill="none" strokeOpacity="0.55" strokeWidth="1.2" strokeLinecap="round" />
+          <circle cx="24" cy="16" r="10" {...G} fill="rgba(110,168,255,0.06)" strokeOpacity="0.75" strokeWidth="1.4" />
+          <path d="M24 10.5v6.5l4.2 2.3" {...G} strokeWidth="1.4" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+          <path d="M20.5 25.4a10 10 0 0 0 13.5-6.2" {...DIM} strokeWidth="1.2" fill="none" strokeLinecap="round" strokeDasharray="2.5 3" />
+          <path d="M15.5 14.5a10 10 0 0 1 6.6-6.4" {...OK} strokeWidth="1.3" fill="none" strokeLinecap="round" />
+          <circle cx="9" cy="10" r="2" {...OK} fill="rgba(74,222,128,0.2)" strokeWidth="1.2" />
         </svg>
       );
     case "rows":
@@ -78,10 +83,12 @@ function MiniViz({ kind }: { kind: Viz }) {
     case "bars":
       return (
         <svg viewBox="0 0 48 32" className={styles.viz} aria-hidden>
-          <path d="M4 26h42" {...DIM} strokeWidth="1.2" fill="none" strokeLinecap="round" />
-          <rect x="9" y="16" width="9" height="10" rx="1.5" {...DIM} fill="none" strokeWidth="1.2" />
-          <rect x="24" y="8" width="9" height="18" rx="1.5" {...G} fill="none" strokeWidth="1.2" />
-          <path d="M33 12h7M33 16h4" {...OK} strokeWidth="1.2" fill="none" strokeLinecap="round" />
+          <path d="M4 27h42" {...DIM} strokeOpacity="0.5" strokeWidth="1.2" fill="none" strokeLinecap="round" />
+          <rect x="8" y="17" width="9" height="10" rx="1.5" {...DIM} fill="rgba(138,148,166,0.12)" strokeWidth="1.2" />
+          <rect x="23" y="8" width="9" height="19" rx="1.5" {...G} fill="rgba(110,168,255,0.16)" strokeWidth="1.3" />
+          <path d="M8 12.5l4.5-4 2.5 2 4-4.5" {...OK} strokeWidth="1.3" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+          <circle cx="41.5" cy="14" r="2.2" {...G} fill="rgba(110,168,255,0.2)" strokeWidth="1.2" />
+          <path d="M39.5 9l2 2.2-2.2 2.4" {...G} strokeWidth="1.2" fill="none" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
       );
   }
